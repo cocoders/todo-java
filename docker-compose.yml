@@ -3,9 +3,11 @@ services:
   app:
     build: .
     ports:
-    - "8080:8080"
+      - "8080:8080"
     depends_on:
-    - mypostgres
+      - mypostgres
+    volumes:
+      - .:/project
   mypostgres:
     image: postgres
     ports:
